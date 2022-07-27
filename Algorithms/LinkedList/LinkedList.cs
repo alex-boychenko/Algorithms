@@ -10,7 +10,14 @@ namespace Algorithms.LinkedList
     {
         public ListNode<T> Head { get; private set; }
 
-        public void AddNode(T data)
+        public void PrependNode(T data)
+        {
+            var prev = new ListNode<T>(data);
+            prev.Next = Head;
+            Head = prev;
+        }
+
+        public void AppendNode(T data)
         {
             var next = new ListNode<T>(data);
 
